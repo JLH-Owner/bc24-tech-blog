@@ -1,0 +1,11 @@
+hbs
+{{> layout}}
+<h1>The Tech Blog</h1>
+<div class="posts">
+    {{#each posts}}
+        <div class="post">
+            <h2 class="dark-mode">{{this.title}}</h2>
+            <p class="light-mode">{{this.content}}</p>
+        </div>
+    {{/each}}
+</div>
