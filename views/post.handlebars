@@ -1,0 +1,13 @@
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+<h3>Comments</h3>
+{{#each comments}}
+    <div class="comment">
+        <p>{{this.content}}</p>
+    </div>
+{{/each}}
+<form action="/comment" method="POST">
+    <input type="hidden" name="postId" value="{{post.id}}">
+    <textarea name="content" placeholder="Add a comment..." required></textarea>
+    <button type="submit">Submit</button>
+</form>
