@@ -1,20 +1,20 @@
 # Tech Blog CMS
 
 ## Description
-A blog content management system built with Express and Sequelize, allowing users to create, read, update, and delete blog posts and comments.
+This is a simple Blog Content Management System (CMS) built with Express and Sequelize, allowing users to create, read, update, and delete blog posts and comments. User authentication is handled using sessions.
 
 ## Installation
-- Node.js
-- PostgreSQL
 
 ## Usage
-Clone repository, run "npm install" to install all packages listed in package.json file. Execute by running npm start. Use http://localhost:3001 to view.
+
+## Credits
 
 ## Images
-<img src=""/>
 
-## Links
--GitHub Repo: https://github.com/JLH-Owner/bc24-tech-blog
--Live URL: 
+## LINKS
+GitHub: https://github.com/JLH-Owner/bc24-tech-blog
+
+Live URL: 
+
 
    
