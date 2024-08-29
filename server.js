@@ -1,40 +1,27 @@
-const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-
-const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sessionConfig = require('./config/session');
+const sequelize = require('./config/config');
+require ('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
-
-
-
-app.use(session({
-        secret: 'Super secret secret',
-        cookie: {},
-        resave: true,
-        savUninitialized: false,
-        store: new SequelizeStore({
-            db: sequelize
-        })
-    }
-));
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sessionConfig));
 
-app.use(routes);
-
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+app.get('/', (req, res) => {
+    res.send('Welcome to The Tech Blog!');
 });
+
+sequelize.sync()
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server is running on http://localhost:${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('Unable to sync the database:', error);
+    });

@@ -1,21 +1,21 @@
 {
-  "name": "bc24-tech-blog",
+  "name": "techblog",
   "version": "1.0.0",
   "description": "Tech Blog",
   "main": "server.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "seed": "node seeds/seed.js",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JLH-Owner/bc24-tech-blog.git"
   },
   "keywords": [
-    "Blog",
-    "CMS",
-    "Tech"
+    "blog",
+    "posts",
+    "CMS"
   ],
   "author": "Stacy Herbert",
   "license": "ISC",
