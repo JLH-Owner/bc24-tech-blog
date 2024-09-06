@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sessionConfig = require('./config/session');
-const sequelize = require('./config/config');
+const sequelize = require('./config/connection');
 require ('dotenv').config();
 
 const app = express();
